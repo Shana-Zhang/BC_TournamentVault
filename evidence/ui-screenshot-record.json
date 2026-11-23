@@ -1,34 +1,84 @@
 {
-  "capturedAt": "2026-11-23T13:38:57.862316+00:00",
+  "source": "Seven user-provided screenshots selected for the final report",
+  "receivedOn": "2026-11-23",
   "page": "http://127.0.0.1:8080/",
-  "newTransactionsSubmitted": false,
   "images": [
     {
-      "path": "evidence/ui-create-form-example.png",
-      "caption": "Figure 1 Tournament creation form example; partially filled for illustration only, not submitted.",
-      "sha256": "bfaa14cc1a509f0f46ce264faf1790faecd44ce4a5a93b603d4d14785fbc65c4"
+      "path": "evidence/ui-tournament-directory.png",
+      "title": "Tournament directory",
+      "caption": "Figure 1 Tournament directory. Lists events with their status, player count, prize and organizer, and provides an Open button to load a selected tournament.",
+      "source": "User-provided screenshot; original pixels retained",
+      "dimensions": [
+        2193,
+        1291
+      ],
+      "sha256": "3d183cacfe75d247ecea593052d4baf901f0f67148c499305ad4d44dac37079e"
     },
     {
-      "path": "evidence/ui-finalized-tournament1.png",
-      "caption": "Figure 2 Live tournament 1 readback: Finalized, registered roster, corrected ranking and zero remaining prize credit.",
-      "sha256": "8d72339569e9666f8d9f7eb0c930bd6d67826d910a29c6c8da7b4ab3631726b6"
+      "path": "evidence/ui-registered-player.png",
+      "title": "Registered player view",
+      "caption": "Figure 2 Tournament details. Shows the connected account's role, event rules, participant information, deadlines and individual ETH prize and LRT bonus credits.",
+      "source": "User-provided screenshot; original pixels retained",
+      "dimensions": [
+        1527,
+        1503
+      ],
+      "sha256": "2ce8c2cbbef597f0239240b73e55eff05059d5809ee8a6275a84a29c928624e1"
     },
     {
-      "path": "evidence/ui-participant-transaction-history.png",
-      "caption": "Figure 3 Connected participant history: confirmed registration and prize-withdrawal transaction links.",
-      "sha256": "927a97b3e23964bb32a0285f6272d3be52c46b8cd5751efaf21c0c3707e5d142"
+      "path": "evidence/ui-tournament-actions.png",
+      "title": "Tournament actions",
+      "caption": "Figure 3 Tournament actions. Provides registration opening, player entry, roster locking, result finalization, prize withdrawal, fee refunds, organizer prize recovery and cancellation. Each action is checked against its role and lifecycle conditions.",
+      "source": "User-provided screenshot; original pixels retained",
+      "dimensions": [
+        1404,
+        627
+      ],
+      "sha256": "fa420a3a9836095f13b25902472d6288d6a0dc38c0d649ef7da2cd9459dc81cd"
     },
     {
-      "path": "evidence/ui-results-review-example.png",
-      "caption": "Figure 4 Results and review interface: ranked addresses, evidence, referee submission, dispute resolution and objection controls. Filled only for illustration; not submitted.",
-      "sha256": "34771b68c84d918c1907c3e33cfc704d1f9e351b48823ef97f16517bb7b8629d",
-      "capturedAt": "2026-11-23T13:57:24.928154+00:00"
+      "path": "evidence/ui-lrt-exchange.png",
+      "title": "LRT exchange",
+      "caption": "Figure 4 LRT exchange. Provides token inventory contribution, LRT purchase, approved token redemption and withdrawal of credited redemption ETH. The interface also displays the user's redemption credit.",
+      "source": "User-provided screenshot; original pixels retained",
+      "dimensions": [
+        1185,
+        1356
+      ],
+      "sha256": "3c38626b6906e44a71af92012ea4a6f91b12b0ce89ea6a8ff8d339581303c6cf"
     },
     {
-      "path": "evidence/ui-wallet-connection.png",
-      "caption": "Figure 5 MetaMask connection request for six demonstration accounts. This grants website connection permissions; it is not a transfer or an arbitration transaction. Moving funds still requires wallet confirmation.",
-      "source": "User-provided screenshot",
-      "sha256": "2d044ce262fe86d34d50c931dd33f32a9e8b6018701b3628e57187ee8b2f48ea"
+      "path": "evidence/ui-new-tournament.png",
+      "title": "Tournament creation",
+      "caption": "Figure 5 Tournament creation. Lets an organizer set the referee and resolver, ETH prize, optional LRT bonus, entry fee, capacity, ranked shares and time windows. Creation escrows the ETH prize; registration opening transfers the optional LRT bonus.",
+      "source": "User-provided screenshot; original pixels retained",
+      "dimensions": [
+        1440,
+        1368
+      ],
+      "sha256": "25030ab37d31f8b81ce15763e8b154607f9a5ea07a165e77a392d3e5d23c63ce"
+    },
+    {
+      "path": "evidence/ui-results-review.png",
+      "title": "Results and arbitration",
+      "caption": "Figure 6 Results and arbitration. Lets the referee submit ranked winners and evidence, the resolver review a dispute and confirm or correct the ranking, and a participant raise an objection. Evidence text is hashed in the browser for the on-chain commitment.",
+      "source": "User-provided screenshot; original pixels retained",
+      "dimensions": [
+        1181,
+        1134
+      ],
+      "sha256": "0718e37348088b49819d554b2567762dd8b6e0ec0ad887c3ce700604a85beb78"
+    },
+    {
+      "path": "evidence/ui-transaction-activity.png",
+      "title": "Transaction activity",
+      "caption": "Figure 7 Transaction activity. Displays project transaction history for the connected account, including earlier sessions, with links to inspect individual transactions on Sepolia Etherscan.",
+      "source": "User-provided screenshot; original pixels retained",
+      "dimensions": [
+        1638,
+        562
+      ],
+      "sha256": "a9b3fab5f1a9ad6f4daa7f94e7171c7926aa0246e0ce1ea3780d0b1a81b19475"
     }
   ]
 }

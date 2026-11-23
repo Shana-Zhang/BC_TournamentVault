@@ -1,0 +1,1 @@
+13 isolated exchange handler scenarios passed. No wallet, network or blockchain transaction used.

@@ -15,7 +15,17 @@ const vaultConfig = () => config.contracts[vaultContractName()];
 const eth = value => ethers.formatEther(value);
 const id = () => BigInt($('tournament-id').value);
 const date = value => Number(value) ? new Date(Number(value) * 1000).toLocaleString() : '—';
-const message = text => { $('notice').textContent = text; };
+const message = text => {
+  $('notice').textContent = text;
+  let feedback = $('action-feedback');
+  if (!feedback) {
+    feedback = document.createElement('div'); feedback.id = 'action-feedback';
+    feedback.setAttribute('role', 'status'); feedback.setAttribute('aria-live', 'polite');
+    document.body.append(feedback);
+  }
+  feedback.textContent = text;
+};
+let confirmedTransactionCount = 0;
 function renderActivity() {
   const rows = [...activityEntries.values()]
     .sort((a, b) => (b.blockNumber ?? Number.MAX_SAFE_INTEGER) - (a.blockNumber ?? Number.MAX_SAFE_INTEGER))
@@ -188,7 +198,7 @@ async function loadTournamentDirectory() {
   } catch (error) {
     if (loadId !== directoryLoadId) return;
     const reason = error?.code ?? error?.info?.error?.code ?? error?.name ?? 'Error';
-    $('directory-status').textContent = `Could not load the tournament directory (${stage}: ${reason}).`;
+    $('directory-status').textContent = `Could not load the tournament directory (${reason}).`;
   }
 }
 async function appendTournamentParticipants(container, tournamentId, tournament) {
@@ -281,36 +291,43 @@ async function transact(label, promise) {
   const receipt = await tx.wait();
   if (receipt.status !== 1) { activityEntries.delete(tx.hash); renderActivity(); throw new Error('Transaction reverted'); }
   addActivity(label, tx.hash, receipt.blockNumber);
+  confirmedTransactionCount++;
   return receipt;
 }
 async function action(work) {
   if (busy) return;
   if (connecting) { message('Wait for the wallet account to finish connecting.'); return; }
   busy = true;
+  const confirmationsBefore = confirmedTransactionCount;
+  message('Checking wallet and current contract state…');
   document.querySelectorAll('button').forEach(b => { b.disabled = true; });
   try {
     if (!signer) throw new Error('Connect your wallet first.');
-    await work(); await refresh(); await loadTournamentDirectory(); message('Confirmed. Account and tournament balances refreshed.');
+    if (await work() === false) return;
+    message('Refreshing account and tournament data…');
+    await refresh(); await loadTournamentDirectory();
+    message(confirmedTransactionCount > confirmationsBefore ? 'Transaction confirmed. Account and tournament data refreshed.' : 'Account and tournament data updated.');
   } catch (error) { message(error.shortMessage || error.reason || error.message); }
   finally { busy = false; document.querySelectorAll('button').forEach(b => { b.disabled = false; }); }
 }
-async function refresh() {
+async function refresh({ includeRoster = true } = {}) {
   const requestedId = id();
-  $('balance').textContent = `${eth(await token.balanceOf(account))} LRT`;
-  $('vault-credit').textContent = `${eth(await vault.ethCredits(account))} ETH`;
-  $('reserve').textContent = `${eth(await exchange.availableReserve())} ETH`;
-  $('exchange-credit').textContent = `Your redemption credit: ${eth(await exchange.ethCredits(account))} ETH`;
+  const [balance, credit, reserve, exchangeCredit] = await Promise.all([
+    token.balanceOf(account), vault.ethCredits(account), exchange.availableReserve(), exchange.ethCredits(account)
+  ]);
+  $('balance').textContent = `${eth(balance)} LRT`;
+  $('vault-credit').textContent = `${eth(credit)} ETH`;
+  $('reserve').textContent = `${eth(reserve)} ETH`;
+  $('exchange-credit').textContent = `Your redemption credit: ${eth(exchangeCredit)} ETH`;
   try {
     const loaded = await vault.getTournament(requestedId);
-    const prizeCredit = await vault.prizeCredits(requestedId, account);
-    const ethPrizeCredit = vault.ethPrizeCredits ? await vault.ethPrizeCredits(requestedId, account) : 0n;
-    const [isRegistered, refundClaimed, organizerRefundClaimed] = await Promise.all([
-      vault.registered(requestedId, account), vault.refundClaimed(requestedId, account), vault.organizerRefundClaimed(requestedId)
+    const [prizeCredit, ethPrizeCredit, isRegistered, refundClaimed, organizerRefundClaimed, latestBlock] = await Promise.all([
+      vault.prizeCredits(requestedId, account), vault.ethPrizeCredits ? vault.ethPrizeCredits(requestedId, account) : 0n,
+      vault.registered(requestedId, account), vault.refundClaimed(requestedId, account), vault.organizerRefundClaimed(requestedId), provider.getBlock('latest')
     ]);
     if (requestedId !== id()) return;
     tournament = loaded; loadedTournamentId = requestedId;
-    const latestBlock = await provider.getBlock('latest');
-    updateRoleInterface(loaded, isRegistered, prizeCredit + ethPrizeCredit, await vault.ethCredits(account), refundClaimed, organizerRefundClaimed, latestBlock.timestamp);
+    updateRoleInterface(loaded, isRegistered, prizeCredit + ethPrizeCredit, credit, refundClaimed, organizerRefundClaimed, latestBlock.timestamp);
     const rows = [
       ['Status', states[Number(tournament.state)]],
       ['ETH prize', `${eth(tournament.rules.ethPrize ?? tournament.rules.prize)} ETH`],
@@ -324,7 +341,7 @@ async function refresh() {
     const dl = document.createElement('dl');
     for (const [label, value] of rows) { const dt = document.createElement('dt'); dt.textContent = label; const dd = document.createElement('dd'); dd.textContent = value; dl.append(dt, dd); }
     $('tournament').replaceChildren(dl);
-    try { await appendTournamentParticipants($('tournament'), requestedId, tournament); }
+    try { if (includeRoster) await appendTournamentParticipants($('tournament'), requestedId, tournament); }
     catch { const warning = document.createElement('p'); warning.className = 'muted'; warning.textContent = 'Could not load the entrant list from this wallet RPC.'; $('tournament').append(warning); }
   } catch (error) {
     if (requestedId !== id()) return;
@@ -332,6 +349,7 @@ async function refresh() {
     $('tournament').textContent = error.code === 'CALL_EXCEPTION'
       ? `Tournament ${requestedId} could not be read. Check the number and wallet network.`
       : 'Unable to load the tournament. Check the wallet network and try again.';
+    throw new Error($('tournament').textContent);
   }
 }
 $('connect').onclick = async () => {
@@ -414,10 +432,17 @@ function requireTournament() {
 async function requireAllowedTournamentAction(button) {
   requireTournament();
   // Re-read state and credits before any approval or wallet transaction request.
-  await refresh();
+  message('Checking account permissions and tournament state…');
+  await refresh({ includeRoster: false });
   const n = requireTournament();
-  if (button?.dataset.allowed !== 'true')
-    throw new Error('Current account or tournament state does not allow this action. No transaction requested.');
+  if (button?.dataset.allowed !== 'true') {
+    const method = button?.dataset.action || button?.value;
+    if (method === 'submit' && account.toLowerCase() !== tournament.referee.toLowerCase())
+      throw new Error('Only this tournament’s referee can submit results. No transaction requested.');
+    if (method === 'resolve' && account.toLowerCase() !== tournament.resolver.toLowerCase())
+      throw new Error('Only this tournament’s resolver can resolve a dispute. No transaction requested.');
+    throw new Error(`Action unavailable: tournament is ${states[Number(tournament.state)]}. Check your role, deadline and available credit. No transaction requested.`);
+  }
   return n;
 }
 $('actions').onclick = event => {
@@ -467,26 +492,43 @@ $('create').onsubmit = event => {
   });
 };
 $('results').onsubmit = event => {
-  event.preventDefault(); const mode = event.submitter.value;
+  event.preventDefault(); const mode = event.submitter?.value || 'submit';
+  const submitter = event.submitter || $('results').querySelector(`[name="mode"][value="${mode}"]`);
   action(async () => {
-    const n = await requireAllowedTournamentAction(event.submitter);
-    if (!event.target.reportValidity()) return;
+    const n = await requireAllowedTournamentAction(submitter);
+    if (!event.target.reportValidity()) { message('Complete the required ranking and evidence fields. No transaction requested.'); return false; }
     const winners = $('winners').value.split(/[\s,]+/).filter(Boolean).map(ethers.getAddress);
     const hash = ethers.id($('evidence').value);
     await transact(mode === 'resolve' ? 'Resolve dispute' : 'Submit result', mode === 'resolve' ? vault.resolveDispute(n, winners, hash) : vault.submitResult(n, winners, hash));
   });
 };
 $('dispute').onsubmit = event => { event.preventDefault(); action(async () => {
-  const n = await requireAllowedTournamentAction(event.submitter);
-  if (!event.target.reportValidity()) return;
+  const n = await requireAllowedTournamentAction(event.submitter || $('dispute').querySelector('button'));
+  if (!event.target.reportValidity()) { message('Enter the objection evidence. No transaction requested.'); return false; }
   await transact('Raise objection', vault.raiseDispute(n, ethers.id($('reason').value)));
 }); };
 $('redeem').onsubmit = event => { event.preventDefault(); action(async () => {
-  const amount = ethers.parseEther($('redeem-amount').value); await exchange.quote(amount);
-  await transact('Approve LRT redemption', token.approve(exchange.target, amount)); await transact('Redeem LRT', exchange.redeem(amount));
+  const amount = ethers.parseEther($('redeem-amount').value);
+  const quoted = await exchange.quote(amount);
+  const [balance, reserve, allowance] = await Promise.all([
+    token.balanceOf(account), exchange.availableReserve(), token.allowance(account, exchange.target)
+  ]);
+  if (balance < amount) throw new Error('Insufficient LRT balance. No transaction requested.');
+  if (reserve < quoted) throw new Error('Insufficient exchange ETH reserve. No transaction requested.');
+  if (allowance < amount) await transact('Approve LRT redemption', token.approve(exchange.target, amount));
+  await transact('Redeem LRT', exchange.redeem(amount));
 }); };
-$('exchange-withdraw').onclick = () => action(() => transact('Withdraw redemption ETH', exchange.withdrawETH(account)));
-$('buy').onsubmit = event => { event.preventDefault(); action(() => transact('Buy LRT', exchange.buy({ value: ethers.parseEther($('buy-amount').value) }))); };
+$('exchange-withdraw').onclick = () => action(async () => {
+  if (await exchange.ethCredits(account) === 0n) throw new Error('No redemption ETH available to withdraw. No transaction requested.');
+  await transact('Withdraw redemption ETH', exchange.withdrawETH(account));
+});
+$('buy').onsubmit = event => { event.preventDefault(); action(async () => {
+  const value = ethers.parseEther($('buy-amount').value);
+  if (value <= 0n) throw new Error('Enter a positive ETH amount.');
+  const [rate, inventory] = await Promise.all([exchange.TOKEN_UNITS_PER_WEI(), token.balanceOf(exchange.target)]);
+  if (inventory < value * rate) throw new Error('Insufficient exchange LRT inventory. No transaction requested.');
+  await transact('Buy LRT', exchange.buy({ value }));
+}); };
 $('reserve-fund').onsubmit = event => { event.preventDefault(); action(() => transact('Fund exchange reserve', signer.sendTransaction({ to: exchange.target, value: ethers.parseEther($('fund-amount').value) }))); };
 $('inventory-fund').onsubmit = event => {
   event.preventDefault();

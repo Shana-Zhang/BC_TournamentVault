@@ -38,9 +38,13 @@
     "withdrawTransaction": "0xf63d0ecd75177395ad919ae423c6fb0ef9473ce2d5bcb956cb0ee75502b0b6df"
   },
   "screenshots": [
-    "evidence/ui-create-form-example.png",
-    "evidence/ui-finalized-tournament1.png",
-    "evidence/ui-participant-transaction-history.png"
+    "evidence/ui-tournament-directory.png",
+    "evidence/ui-registered-player.png",
+    "evidence/ui-tournament-actions.png",
+    "evidence/ui-lrt-exchange.png",
+    "evidence/ui-new-tournament.png",
+    "evidence/ui-results-review.png",
+    "evidence/ui-transaction-activity.png"
   ],
   "preliminaryRanking": [
     "0xF7a61C6D5377130a45aE4F9cB4b4f8FFD8f2E506",
@@ -57,5 +61,5 @@
     "0x2a85946a52C40f9A3b0dB85C20F4FD5887eA79A2"
   ],
   "resolutionEvidence": "V3 fresh Sepolia demo: simulated score review accepted; final ranking accounts 5, 4, 6. ETH prize and LRT bonus allocated 50/30/20.",
-  "screenshotNote": "Refreshed UI captures: unsubmitted creation form, current finalized readback, and confirmed participant history. No transaction was submitted to create these images."
+  "screenshotNote": "The final report uses seven user-provided replacement screenshots to introduce frontend functions. The fixed tournament #1 receipt record remains unchanged. See ui-screenshot-record.json for image captions and hashes."
 }

@@ -14,6 +14,8 @@ function element(id) {
 const buttons = ['open','register','cancel','lock','finalize','prize','fees','refund','organizer-refund','timeout'].map(action => ({hidden:true,dataset:{action,role:({open:'organizer',cancel:'organizer',register:'eligible',prize:'prize-credit',fees:'eth-credit',refund:'registered','organizer-refund':'organizer'})[action] || 'any'}}));
 let requested = 0, refreshes = 0, pending;
 const ctx = vm.createContext({
+  states: ['Draft','Registration open','Locked','Result pending','Disputed','Finalized','Cancelled'],
+  message: () => {},
   account:'player', vault:{ethPrizeCredits(){},target:'vault'}, $:element,
   document:{querySelectorAll:()=>buttons},
   requireTournament:()=>1n,
@@ -44,5 +46,22 @@ ctx.tournament=ctx.t;
   ctx.updateRoleInterface(ctx.t,true,0n,0n,false,false,100);
   assert.equal(element('results[name="mode"][value="resolve"]').dataset.allowed,'true','Designated resolver can act during a live dispute');
   assert.equal(element('results[name="mode"][value="submit"]').dataset.allowed,'false','Resolver does not gain referee permission');
+  const statuses=[];let reads=0;
+  const feedbackContext=vm.createContext({busy:false,connecting:false,signer:{},confirmedTransactionCount:0,
+    document:{querySelectorAll:()=>buttons},message:text=>statuses.push(text),
+    refresh:async()=>{reads++;},loadTournamentDirectory:async()=>{reads++;}});
+  vm.runInContext(source.slice(source.indexOf('async function action('),source.indexOf('async function refresh(')),feedbackContext);
+  await feedbackContext.action(async()=>false);
+  assert.equal(reads,0,'Invalid form does not get a false confirmation');
+  assert(!statuses.some(s=>s.includes('confirmed')));
+  await feedbackContext.action(async()=>{throw new Error('Only referee');});
+  assert.equal(statuses.at(-1),'Only referee');assert(buttons.every(b=>!b.disabled));
+  await feedbackContext.action(async()=>{});
+  assert.equal(statuses.at(-1),'Account and tournament data updated.','Read-only refresh is not called a confirmed transaction');
+  const directoryStatus={textContent:''};
+  const directoryContext=vm.createContext({provider:{},config:{},vault:{tournamentCount:async()=>{throw Object.assign(new Error('RPC unavailable'),{code:'NETWORK_ERROR'});}},directoryLoadId:0,$:()=>directoryStatus});
+  vm.runInContext(source.slice(source.indexOf('async function loadTournamentDirectory('),source.indexOf('async function appendTournamentParticipants(')),directoryContext);
+  await directoryContext.loadTournamentDirectory();
+  assert.equal(directoryStatus.textContent,'Could not load the tournament directory (NETWORK_ERROR).');
   console.log('UI guard checks passed: visible controls; stale/unauthorized clicks request no wallet transaction; eligible actions remain functional.');
 })().catch(e=>{console.error(e);process.exitCode=1;});

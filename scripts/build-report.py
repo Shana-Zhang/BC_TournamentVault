@@ -73,10 +73,22 @@ h('5.3 Test Evidence',2);p('evidence/test-output.txt records 51 passing tests. e
 p(f"At block {snap['block']} ({snap['checkedAt']}), tournament #1 was Finalized with all prize credits zero. A separate small tournament #2 had one entrant and 0.000002 ETH of prize/fee obligations. It is independently accounted and does not represent unpaid #1 winnings. This is a timestamped snapshot, not a claim of current zero total vault liabilities.")
 labels={v:k for k,v in ev['transactions'].items()};labels.update({v:k for k,v in ev['exchange'].items() if k.endswith('Transaction')})
 table(['Operation','Successful receipt and gas'],[[labels.get(t['hash'],'Exchange operation'),'https://sepolia.etherscan.io/tx/'+t['hash']+'\nGas used '+t['gasUsed']] for t in snap['receipts']])
-for name,caption,width in [('ui-create-form-example.png', 'Figure 1 Tournament creation form example; partially filled for illustration only, not submitted.', 5.5), ('ui-finalized-tournament1.png', 'Figure 2 Live tournament 1 readback: Finalized, registered roster, corrected ranking and zero remaining prize credit.', 5.0), ('ui-participant-transaction-history.png', 'Figure 3 Connected participant history: confirmed registration and prize-withdrawal transaction links.', 6.1)]:
- doc.add_picture(str(R/'evidence'/name),width=Inches(width));p(caption,'Caption')
-doc.add_picture(str(R/'evidence/ui-results-review-example.png'),width=Inches(5.5));p('Figure 4 Results and review interface: ranked addresses, evidence, referee submission, dispute resolution and objection controls. Filled only for illustration; not submitted.')
-doc.add_picture(str(R/'evidence/ui-wallet-connection.png'),width=Inches(6.1));p('Figure 5 MetaMask connection request for six demonstration accounts. This grants website connection permissions; it is not a transfer or an arbitration transaction. Moving funds still requires wallet confirmation.')
+h('5.4 Frontend Screenshots',2)
+p('The following seven screenshots introduce the frontend functions: tournament browsing, event details, lifecycle actions, the exchange, creation, results and arbitration, and transaction history. The captions describe the functions of each screen. Deployment and test results are documented separately above.')
+from PIL import Image
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+screenshots=json.loads((R/'evidence/ui-screenshot-record.json').read_text())['images']
+for i, image in enumerate(screenshots):
+ if i: doc.add_page_break()
+ else: doc.paragraphs[-2].paragraph_format.page_break_before=True
+ p(image['title'],'Heading 3')
+ with Image.open(R/image['path']) as im: w,h_px=im.size
+ width=min(6.1,6.25*w/h_px)
+ z=p();z.alignment=WD_ALIGN_PARAGRAPH.CENTER
+ z.paragraph_format.keep_with_next=True
+ z.add_run().add_picture(str(R/image['path']),width=Inches(width))
+ p(image['caption'],'Caption')
+doc.add_page_break()
 h('6. Smart Contract Security Audit');h('6.1 Audit Scope and Methodology',2);p('The current scope is the three V3 production contracts and their interaction with the pinned token, receiver fixture and wallet interface. npm run analyze compiles an AST with a small explicit rule set and records source hashes, bytecode sizes and diagnostics. It is combined with manual review and adversarial unit tests. The current AST scan has 2,081 project nodes, zero compiler errors and 21 review prompts; these prompts are review items, not confirmed vulnerability severities. The full raw output is audit/static-analysis.json. No claim of a complete security audit or formal verification is made.')
 h('6.2 Findings Summary',2)
 table(['ID and scope','Impact and severity','Control and retest status'],[['S01 roles and msg.sender','Unauthorized result or credit claims; application risk High','Role checks and owner-scoped credits; non-referee, non-resolver and outsider tests pass'],['S02 external calls','Reentry, duplicate payout or lost credit; application risk High','Effects before interactions, nonReentrant, checked calls; rejected delivery/reentry and repeat withdrawal tests pass'],['S03 timestamp rules','Early/late operations and unresolved states; Review / residual Low','Consistent gates and timeout exits; exact registration/result/dispute/resolution boundaries pass'],['S04 bounded loops','Gas exhaustion with large rankings; Review','Max 32 ranks and 256 entrants, no all-player refund loop. Capacity rejection passes; maximum-rank gas benchmarking remains future work'],['S05 separate liabilities','Prize or reserve insolvency; application risk High','Exact escrow, individual obligations, reserve check; full payout conservation and insufficient-reserve tests pass'],['S06 off-chain governance','Dishonest or unavailable evidence; residual governance risk','Distinct referee/resolver, participant objection and hashes; correction/timeout tests pass, human judgment remains trusted']])

@@ -83,13 +83,13 @@
     },
     {
       "path": "docs/TournamentVault_V3_Final_Report.docx",
-      "sha256": "40caa8aaa640a74cdf234ed7d79610741f8eb2b8c7273ccec75b4fed7109975e",
-      "bytes": 843845
+      "sha256": "42a3314abb66b907c2bed204a0348189060f1a6345af0e4c3678e39fca6ba24b",
+      "bytes": 847111
     },
     {
       "path": "docs/TournamentVault_V3_Final_Report.pdf",
-      "sha256": "c12c0dc173808376bf5acefd8866aef64627b1237ab5b4e9f84bf2850f6c8e50",
-      "bytes": 692911
+      "sha256": "91950f36b8a98abffe2f1bfaee87e1dcccb339b82a532fc8f10cf5cef18fd8e8",
+      "bytes": 961989
     },
     {
       "path": "evidence/sepolia-v3-final-snapshot.json",
@@ -98,8 +98,8 @@
     },
     {
       "path": "evidence/sepolia-v3-fresh-test.json",
-      "sha256": "967e73db5e53c39aee74295c2b7f61e1ff1b8e1418ee642e88ae697518f3bcfe",
-      "bytes": 3659
+      "sha256": "cc74785cc8c6769e13870369c31248b89a2af18919709b2f86ae7d3998fbe368",
+      "bytes": 3857
     },
     {
       "path": "evidence/test-cases.json",
@@ -122,34 +122,49 @@
       "bytes": 136
     },
     {
-      "path": "evidence/ui-create-form-example.png",
-      "sha256": "bfaa14cc1a509f0f46ce264faf1790faecd44ce4a5a93b603d4d14785fbc65c4",
-      "bytes": 177385
+      "path": "evidence/ui-exchange-checks.txt",
+      "sha256": "584334d8627a970e5f3fe428439f9bdeb91dad02dc940e07a9138bd243b72f00",
+      "bytes": 99
     },
     {
-      "path": "evidence/ui-finalized-tournament1.png",
-      "sha256": "8d72339569e9666f8d9f7eb0c930bd6d67826d910a29c6c8da7b4ab3631726b6",
-      "bytes": 161730
+      "path": "evidence/ui-lrt-exchange.png",
+      "sha256": "3c38626b6906e44a71af92012ea4a6f91b12b0ce89ea6a8ff8d339581303c6cf",
+      "bytes": 84109
     },
     {
-      "path": "evidence/ui-participant-transaction-history.png",
-      "sha256": "927a97b3e23964bb32a0285f6272d3be52c46b8cd5751efaf21c0c3707e5d142",
-      "bytes": 102229
+      "path": "evidence/ui-new-tournament.png",
+      "sha256": "25030ab37d31f8b81ce15763e8b154607f9a5ea07a165e77a392d3e5d23c63ce",
+      "bytes": 115146
     },
     {
-      "path": "evidence/ui-results-review-example.png",
-      "sha256": "34771b68c84d918c1907c3e33cfc704d1f9e351b48823ef97f16517bb7b8629d",
-      "bytes": 162151
+      "path": "evidence/ui-registered-player.png",
+      "sha256": "2ce8c2cbbef597f0239240b73e55eff05059d5809ee8a6275a84a29c928624e1",
+      "bytes": 147434
+    },
+    {
+      "path": "evidence/ui-results-review.png",
+      "sha256": "0718e37348088b49819d554b2567762dd8b6e0ec0ad887c3ce700604a85beb78",
+      "bytes": 88366
     },
     {
       "path": "evidence/ui-screenshot-record.json",
-      "sha256": "7de9eeacabf2802778e5330481dbf0b0cb356dcd0bd07c22af789a43d9746454",
-      "bytes": 1846
+      "sha256": "b7c1a9ee1643b38853d213ad132c407317522c87e25ff4d4c3a0efe4e08f82bb",
+      "bytes": 4045
     },
     {
-      "path": "evidence/ui-wallet-connection.png",
-      "sha256": "2d044ce262fe86d34d50c931dd33f32a9e8b6018701b3628e57187ee8b2f48ea",
-      "bytes": 177374
+      "path": "evidence/ui-tournament-actions.png",
+      "sha256": "fa420a3a9836095f13b25902472d6288d6a0dc38c0d649ef7da2cd9459dc81cd",
+      "bytes": 65704
+    },
+    {
+      "path": "evidence/ui-tournament-directory.png",
+      "sha256": "3d183cacfe75d247ecea593052d4baf901f0f67148c499305ad4d44dac37079e",
+      "bytes": 137615
+    },
+    {
+      "path": "evidence/ui-transaction-activity.png",
+      "sha256": "a9b3fab5f1a9ad6f4daa7f94e7171c7926aa0246e0ce1ea3780d0b1a81b19475",
+      "bytes": 144525
     },
     {
       "path": "hardhat.config.js",
@@ -168,8 +183,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "5aca3fd508f705fb58b396c77157a02963ecc4330b445f7c9c8fc09c4f4e1ea7",
-      "bytes": 6522
+      "sha256": "dd9b17a3e07f36bfc16389c2378d4fe3bf5ecbb76480cd66852607e2a67a62b8",
+      "bytes": 6895
     },
     {
       "path": "reference/CSIT5760_Final_Project_Report_Template.docx",
@@ -188,18 +203,23 @@
     },
     {
       "path": "scripts/build-report.py",
-      "sha256": "8c11ca0fe60548a3bf95b7d1fc59bdf91188f3ef4b7858a4fb9392c036b242b5",
-      "bytes": 23155
+      "sha256": "a2f741802e57b06a09ee802ef5fa685cd992a19ab704a8cef071c437ed55ddb2",
+      "bytes": 22997
     },
     {
       "path": "scripts/check-ui-action-guards.cjs",
-      "sha256": "1075f4a1260831969c7f9c6f5ac9a4046d9867a9c759460f96ff995141118cda",
-      "bytes": 3738
+      "sha256": "5fe26606164833e552015e06a35f3d8a3dbe9a4e8199cd8f9283b91730eb4cd7",
+      "bytes": 5395
     },
     {
       "path": "scripts/check-ui-config.js",
       "sha256": "a467ba2ef5cd32d2d5f1c619763a298a4ac0b0203667386b1d7348e140c9fc4c",
       "bytes": 1183
+    },
+    {
+      "path": "scripts/check-ui-exchange.cjs",
+      "sha256": "03ed5f5d5a011c1e47c1da567e45dae5add830ae01ffdfc8d7c140c2fa12b0ec",
+      "bytes": 3933
     },
     {
       "path": "scripts/deploy-local-v3.js",
@@ -248,8 +268,8 @@
     },
     {
       "path": "ui/app.js",
-      "sha256": "340999d194527d43057e6fb6c732087f6016be973b8f58ba3c2bfe073d213506",
-      "bytes": 30056
+      "sha256": "893ed990229503a079ca9aa6b79640eb07a26bd7852eb11402754fc79d5bf49f",
+      "bytes": 32679
     },
     {
       "path": "ui/config.json",
@@ -278,8 +298,8 @@
     },
     {
       "path": "ui/style.css",
-      "sha256": "afd929d5b62f2aa1267d30f581aadcdde87e1d774444611606ec6e0d6c091b8f",
-      "bytes": 4755
+      "sha256": "1a316a21617f3d1be90ce405d827169bd44b7bdcd45ee367969af0ab7cc7e7c8",
+      "bytes": 5110
     }
   ]
 }

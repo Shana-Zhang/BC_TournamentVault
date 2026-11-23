@@ -69,4 +69,6 @@ Final report: docs/TournamentVault_V3_Final_Report.pdf and matching .docx. Repor
 
 The interface keeps tournament, referee, resolver and objection controls visible. Before any wallet transaction or token approval, a click refreshes the selected event and checks the current account, state, deadlines and credits. An ineligible click shows a message and requests no transaction. Contract authorization remains the final enforcement layer.
 
-Run `node scripts/check-ui-action-guards.cjs` for isolated browser-handler guard checks. The filled results/review screenshot is an unsubmitted interface example; public result, objection and arbitration receipts remain the historical integration evidence.
+Run `node scripts/check-ui-action-guards.cjs` for isolated browser-handler guard checks. The report uses only the seven user-provided screenshots listed in evidence/ui-screenshot-record.json to illustrate frontend functions. Public result, objection and arbitration receipts remain the integration evidence.
+
+Run `node scripts/check-ui-exchange.cjs` for 13 isolated exchange-handler scenarios, including insufficient reserves, insufficient inventory, token balances, approval reuse and withdrawal credit. These checks use mocks and send no network requests or transactions; they are separate from the 51 Hardhat contract tests.
