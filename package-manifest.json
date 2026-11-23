@@ -83,13 +83,13 @@
     },
     {
       "path": "docs/TournamentVault_V3_Final_Report.docx",
-      "sha256": "3e6fb9d8d5610710245f8685bc304023b01159da4f82d4f11c04f97f8c6d2f8a",
-      "bytes": 438174
+      "sha256": "ac1b64b35726c2f6f841c250178a4ab31de01829f09d96b9000230441b0c3d67",
+      "bytes": 503314
     },
     {
       "path": "docs/TournamentVault_V3_Final_Report.pdf",
-      "sha256": "3fc40291f5756013942476082330e2d4ba7deeb77f4448937234c6f4a0c9d818",
-      "bytes": 852867
+      "sha256": "7cb7d93ec55115dcd649874b54b1502e7d917f19990412525a965bbce9ddc00a",
+      "bytes": 566094
     },
     {
       "path": "evidence/sepolia-v3-final-snapshot.json",
@@ -97,24 +97,9 @@
       "bytes": 4838
     },
     {
-      "path": "evidence/sepolia-v3-fresh-disputed.png",
-      "sha256": "f6c59567b39db650157dc3bd641ddf6f13be26989fa73b704353e2cdf2c50858",
-      "bytes": 133419
-    },
-    {
-      "path": "evidence/sepolia-v3-fresh-finalized-credit.png",
-      "sha256": "300bd1aad2fe621aeb91a8f246fcdcd2a58afd36cf57bdc978fdaead873b4335",
-      "bytes": 132808
-    },
-    {
-      "path": "evidence/sepolia-v3-fresh-roster-exchange.png",
-      "sha256": "2086e821f54f553fb18c2e36ffd2a07caa5866a9255b062c5fa9120bc8a3ef4d",
-      "bytes": 110262
-    },
-    {
       "path": "evidence/sepolia-v3-fresh-test.json",
-      "sha256": "23ce65bd7a34a145d8867338526c005f3c5986bf62ec466f937b9f07cfa290bc",
-      "bytes": 3479
+      "sha256": "967e73db5e53c39aee74295c2b7f61e1ff1b8e1418ee642e88ae697518f3bcfe",
+      "bytes": 3659
     },
     {
       "path": "evidence/test-cases.json",
@@ -130,6 +115,26 @@
       "path": "evidence/test-output.txt",
       "sha256": "cbb4bdb8d1b80440a5e8580b590d50a351ff240ebbee436fb6b381dc877e5e51",
       "bytes": 3286
+    },
+    {
+      "path": "evidence/ui-create-form-example.png",
+      "sha256": "bfaa14cc1a509f0f46ce264faf1790faecd44ce4a5a93b603d4d14785fbc65c4",
+      "bytes": 177385
+    },
+    {
+      "path": "evidence/ui-finalized-tournament1.png",
+      "sha256": "8d72339569e9666f8d9f7eb0c930bd6d67826d910a29c6c8da7b4ab3631726b6",
+      "bytes": 161730
+    },
+    {
+      "path": "evidence/ui-participant-transaction-history.png",
+      "sha256": "927a97b3e23964bb32a0285f6272d3be52c46b8cd5751efaf21c0c3707e5d142",
+      "bytes": 102229
+    },
+    {
+      "path": "evidence/ui-screenshot-record.json",
+      "sha256": "af2769d37ca6b8c178274a81900f987c8dd7d951d743c8b6b181d40f5c6ae821",
+      "bytes": 1006
     },
     {
       "path": "hardhat.config.js",
@@ -168,8 +173,8 @@
     },
     {
       "path": "scripts/build-report.py",
-      "sha256": "2ed60ce90861c268975d007f0a979016af9fd82d8e19e299952c11262e44c4c1",
-      "bytes": 21945
+      "sha256": "25c649c4b5c706e482bcb63be551a52aba10bac675862b8cd12b3a7964c736f2",
+      "bytes": 22174
     },
     {
       "path": "scripts/check-ui-config.js",

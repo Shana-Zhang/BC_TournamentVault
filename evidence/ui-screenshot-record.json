@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-11-23T13:38:57.862316+00:00",
+  "page": "http://127.0.0.1:8080/",
+  "newTransactionsSubmitted": false,
+  "images": [
+    {
+      "path": "evidence/ui-create-form-example.png",
+      "caption": "Figure 1 Tournament creation form example; partially filled for illustration only, not submitted.",
+      "sha256": "bfaa14cc1a509f0f46ce264faf1790faecd44ce4a5a93b603d4d14785fbc65c4"
+    },
+    {
+      "path": "evidence/ui-finalized-tournament1.png",
+      "caption": "Figure 2 Live tournament 1 readback: Finalized, registered roster, corrected ranking and zero remaining prize credit.",
+      "sha256": "8d72339569e9666f8d9f7eb0c930bd6d67826d910a29c6c8da7b4ab3631726b6"
+    },
+    {
+      "path": "evidence/ui-participant-transaction-history.png",
+      "caption": "Figure 3 Connected participant history: confirmed registration and prize-withdrawal transaction links.",
+      "sha256": "927a97b3e23964bb32a0285f6272d3be52c46b8cd5751efaf21c0c3707e5d142"
+    }
+  ]
+}
