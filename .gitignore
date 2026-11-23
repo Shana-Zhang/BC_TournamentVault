@@ -1,0 +1,14 @@
+node_modules/
+artifacts/
+cache/
+coverage/
+coverage.json
+.env
+.env.*
+!.env.example
+submission/
+*.log
+.npm-cache/
+.local/
+.tools/
+

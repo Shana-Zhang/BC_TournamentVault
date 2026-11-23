@@ -1,0 +1,260 @@
+{
+  "version": "V3",
+  "files": [
+    {
+      "path": ".env.example",
+      "sha256": "59941decf3b1542a358b8f7b2aa105a35e8cc14483da7e33b5177e34cfe3da05",
+      "bytes": 140
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "bytes": 8
+    },
+    {
+      "path": ".github/workflows/verify.yml",
+      "sha256": "49d73ce4d5a31819cfcc11fa7543675a41bd6104dfb41590d0e4c4735a1d284e",
+      "bytes": 444
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "44129cb9e33fa2de13ed1912f82c80f787753c3b271871dc9f5c6efe103c259a",
+      "bytes": 129
+    },
+    {
+      "path": ".solcover.js",
+      "sha256": "6fc4d156db94531e768b0339e125bd9a3d05adbb36bd4fdaa227af221dfcde4a",
+      "bytes": 62
+    },
+    {
+      "path": "audit/security-review.md",
+      "sha256": "7df31dc3a0080bd320ecc3626bae30feabe178dfef113160e399fe47466b7782",
+      "bytes": 2171
+    },
+    {
+      "path": "audit/static-analysis.json",
+      "sha256": "de8006518d85192e023a5fc7e180eade76418b2d52f82a248c9f1a63ba31244d",
+      "bytes": 5681
+    },
+    {
+      "path": "contracts/LearningRewardToken.sol",
+      "sha256": "94d6cf9d5283da057a5fdb00e9f49b2716dc170eaa4223185892a00ab30d5df9",
+      "bytes": 452
+    },
+    {
+      "path": "contracts/LRTExchange.sol",
+      "sha256": "291adbf953168d428ff75fbac651ae715155398d50d122353695bfb8395e0646",
+      "bytes": 2786
+    },
+    {
+      "path": "contracts/test/PaymentReceiver.sol",
+      "sha256": "1cc6bcafa2a4238e496c4d8425f872795234f4fa29389457b7cde4167087b950",
+      "bytes": 987
+    },
+    {
+      "path": "contracts/TournamentVaultV3.sol",
+      "sha256": "6dd7dc4c5860ac08095df7604476379d3202b0595a6110b44fdeee3c99fca14c",
+      "bytes": 12818
+    },
+    {
+      "path": "deployment/sepolia-v3-read-only-check.json",
+      "sha256": "e74581a3e4176a539b35668e2a898d94c623b2105f7812831a0ea4f1261e8af4",
+      "bytes": 3393
+    },
+    {
+      "path": "deployment/sepolia-v3.json",
+      "sha256": "ca7a61af5eba1a081a990696fc4f5c9dbf41641d58536a3e69d1b0455d4ef245",
+      "bytes": 3924
+    },
+    {
+      "path": "docs/acknowledgements.md",
+      "sha256": "968ed788eb8ae971f92473013dd41c335c21997d698e93e81389a89ccbde92c8",
+      "bytes": 573
+    },
+    {
+      "path": "docs/deployment-information.md",
+      "sha256": "a9645d353cfb79c324f0b05cb869049deb07b632218c0b028609d10fc3784261",
+      "bytes": 1216
+    },
+    {
+      "path": "docs/guideline-compliance.md",
+      "sha256": "67f96d205312303fe14f5d185cc14d40a19c7f08f8c3cc8df1a5bf0354642354",
+      "bytes": 1429
+    },
+    {
+      "path": "docs/TournamentVault_V3_Final_Report.docx",
+      "sha256": "fdced30a4242d680416cc5886cee18e13f1914aae3e2350e46b04e55d8f3c30c",
+      "bytes": 439192
+    },
+    {
+      "path": "docs/TournamentVault_V3_Final_Report.pdf",
+      "sha256": "90755990a41f88090bad72cd43972f630fcba991e0414fcf17c4087b34822dca",
+      "bytes": 853611
+    },
+    {
+      "path": "evidence/sepolia-v3-final-snapshot.json",
+      "sha256": "f2b47ff3b0d6c31a5dbe0505bfb1a8b073e2d5a1d25f9d8858943c89f6e14e76",
+      "bytes": 4838
+    },
+    {
+      "path": "evidence/sepolia-v3-fresh-disputed.png",
+      "sha256": "f6c59567b39db650157dc3bd641ddf6f13be26989fa73b704353e2cdf2c50858",
+      "bytes": 133419
+    },
+    {
+      "path": "evidence/sepolia-v3-fresh-finalized-credit.png",
+      "sha256": "300bd1aad2fe621aeb91a8f246fcdcd2a58afd36cf57bdc978fdaead873b4335",
+      "bytes": 132808
+    },
+    {
+      "path": "evidence/sepolia-v3-fresh-roster-exchange.png",
+      "sha256": "2086e821f54f553fb18c2e36ffd2a07caa5866a9255b062c5fa9120bc8a3ef4d",
+      "bytes": 110262
+    },
+    {
+      "path": "evidence/sepolia-v3-fresh-test.json",
+      "sha256": "23ce65bd7a34a145d8867338526c005f3c5986bf62ec466f937b9f07cfa290bc",
+      "bytes": 3479
+    },
+    {
+      "path": "evidence/test-cases.json",
+      "sha256": "377c1ce3b2143a259b6d17a64215314bdaa552b90d4c48e20822e0a9cd8727d6",
+      "bytes": 27054
+    },
+    {
+      "path": "evidence/test-cases.md",
+      "sha256": "a6d8a85ed670bc5cdc27e2a9f05b24d1db512bb86ee61a51a51efcbc8f7b9e86",
+      "bytes": 17398
+    },
+    {
+      "path": "evidence/test-output.txt",
+      "sha256": "cbb4bdb8d1b80440a5e8580b590d50a351ff240ebbee436fb6b381dc877e5e51",
+      "bytes": 3286
+    },
+    {
+      "path": "hardhat.config.js",
+      "sha256": "1a16f1c116a2acb798739b0a0d2f76a913223b17cb5e034ca70a5bc108e143c2",
+      "bytes": 1241
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "9af984aed633fa38b44edaa89ed2f4590251a0f934f35d588a1b1f8a19fd9c31",
+      "bytes": 225758
+    },
+    {
+      "path": "package.json",
+      "sha256": "7bb45f19ba146dc1b65f16bbb34f3e9da4958c1b3e9fd7fe0e191bf7aa32639f",
+      "bytes": 1177
+    },
+    {
+      "path": "README.md",
+      "sha256": "45b6767da5506d371311bb9994324a6ac6136753db8bc7e4c213afcd891aab52",
+      "bytes": 6138
+    },
+    {
+      "path": "reference/CSIT5760_Final_Project_Report_Template.docx",
+      "sha256": "850646887d548e454390d003ec05fb434273b322c750aa15423d276259a967fe",
+      "bytes": 41587
+    },
+    {
+      "path": "reference/CSIT5760_Project_Guideline.pdf",
+      "sha256": "269e4d990eb3b902e4ee4161d8161cede0beb59e985e92a3da08c04279ff584a",
+      "bytes": 164900
+    },
+    {
+      "path": "scripts/analyze.js",
+      "sha256": "e5808ddd8b03f446e48b11806667b0c3bd294be12d1de7061838ae9d6325247b",
+      "bytes": 4387
+    },
+    {
+      "path": "scripts/build-report.py",
+      "sha256": "d001dc0ef444362e8ad34fec860f516cb4b4cbadd529e695a90fb7415cffdf35",
+      "bytes": 21747
+    },
+    {
+      "path": "scripts/check-ui-config.js",
+      "sha256": "a467ba2ef5cd32d2d5f1c619763a298a4ac0b0203667386b1d7348e140c9fc4c",
+      "bytes": 1183
+    },
+    {
+      "path": "scripts/deploy-local-v3.js",
+      "sha256": "a42844edb4157761fd8c199af0403c432072b1942b242a1aaf4e72af6d763d8f",
+      "bytes": 2205
+    },
+    {
+      "path": "scripts/package.py",
+      "sha256": "d3959699382d31896856b8398e3127df96e1ad78ebdbd8525467df41a376ea35",
+      "bytes": 1568
+    },
+    {
+      "path": "scripts/preflight.js",
+      "sha256": "47e2ce27b01f21e3ce2183068981085c2a5ce9089bdc586382e8a2d20c780f37",
+      "bytes": 2078
+    },
+    {
+      "path": "scripts/read-only-check.js",
+      "sha256": "d7501d703ee4e5459bc7edb42724bbbd8a0a8aa62959483f27d7b710da5644bf",
+      "bytes": 6393
+    },
+    {
+      "path": "scripts/serve.js",
+      "sha256": "c5cff511f06e6494ab754c523704a74cf29b199b1a4e305850372a2d18ba492a",
+      "bytes": 1518
+    },
+    {
+      "path": "scripts/verify-v3.js",
+      "sha256": "9a14dd6712a7135ab1f9ad7f2f371e4d2a2a886b3bc03cb4867e424b502a9184",
+      "bytes": 130
+    },
+    {
+      "path": "scripts/verify.js",
+      "sha256": "9bfed8ac42f8e0706536c7bec0de9c1e53017a0bfe7ab3c38d4d78088fd5b692",
+      "bytes": 3811
+    },
+    {
+      "path": "test/v3-controls.test.js",
+      "sha256": "0745c407ef0c7a8c7af44f0b31032bc79290bb7298a98b6bf90a2a393833e77d",
+      "bytes": 11740
+    },
+    {
+      "path": "test/v3-prize.test.js",
+      "sha256": "f4126fbe8fc64a1d0e2c12e686f28891afc54faee564f663adddd8de99735fa2",
+      "bytes": 10548
+    },
+    {
+      "path": "ui/app.js",
+      "sha256": "3282d7d50c343568e595a199394380c77b460f115940ca6c8542cc25162c646a",
+      "bytes": 28881
+    },
+    {
+      "path": "ui/config.json",
+      "sha256": "8495c3c2965c15dc6885c26f64a9da994198fb4c02ae06c7b0cd98ba236744de",
+      "bytes": 38734
+    },
+    {
+      "path": "ui/deploy-artifacts.json",
+      "sha256": "3649a26df5ec694d1f46239bfd2953e93bf532e18094ad2064018d4c58ef6bcd",
+      "bytes": 54910
+    },
+    {
+      "path": "ui/deploy-wallet.js",
+      "sha256": "956a92a2a666897c4c61a33cbb045d83f84f119ee5ee8b008750b400e2149e19",
+      "bytes": 4724
+    },
+    {
+      "path": "ui/deploy.html",
+      "sha256": "7bb8b3218ae1c6fd50362ac0ec0f00142b217af752a14ae1d779b186c995b8ca",
+      "bytes": 840
+    },
+    {
+      "path": "ui/index.html",
+      "sha256": "29a6c82634fa6cba1afcb2d8d3a236f2be4f9a96e66d135e20ca370d3384157b",
+      "bytes": 7747
+    },
+    {
+      "path": "ui/style.css",
+      "sha256": "afd929d5b62f2aa1267d30f581aadcdde87e1d774444611606ec6e0d6c091b8f",
+      "bytes": 4755
+    }
+  ]
+}

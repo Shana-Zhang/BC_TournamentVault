@@ -1,0 +1,64 @@
+
+> tournament-vault@1.0.0 test
+> hardhat test
+
+
+
+  V3 authorization, state and boundary controls
+    √ creation rejects zero ETH prize (564ms)
+    √ creation rejects capacity below ranks
+    √ creation rejects capacity above maximum
+    √ creation rejects past registration deadline
+    √ creation rejects result before registration
+    √ creation rejects short dispute window
+    √ creation rejects long resolution window
+    √ creation rejects zero share
+    √ creation rejects incorrect total
+    √ creation rejects no ranks
+    √ rejects zero and duplicate role addresses
+    √ requires bonus approval and preserves draft on failed funding
+    √ only organizer can open and cancel a draft
+    √ cannot open registration twice
+    √ o assigned role cannot register
+    √ r assigned role cannot register
+    √ s assigned role cannot register
+    √ duplicate registration leaves fees unchanged
+    √ full roster rejects an extra player
+    √ cannot lock early; insufficient roster cancels at deadline
+    √ referee result rejects duplicate winners
+    √ referee result rejects outsider winner
+    √ referee result rejects wrong rank count
+    √ referee result rejects empty evidence and exact result deadline
+    √ outsider and empty objections are rejected
+    √ objection closes at exact boundary and ordinary finalization opens
+    √ dispute prevents ordinary finalization and second objection
+    √ only resolver can replace ranking and settle once
+    √ resolution rejects exact expiry and timeout cancellation succeeds
+    √ cancelled populated event credits each fee only once
+    √ organizer refund requires cancellation and cannot repeat
+    √ finalized state rejects cancellation and repeated settlement
+    √ zero recipient and outsider cannot take winner credit
+    √ fee withdrawals enforce ownership zero recipient and one payment
+    √ all winner payments conserve prize assets and clear liabilities
+    √ exchange rejects unsupported redemption precision 0
+    √ exchange rejects unsupported redemption precision 1
+    √ exchange rejects insufficient reserve without taking tokens
+    √ exchange requires inventory and nonzero purchase payment
+    √ unknown tournament lookup rejects zero and out-of-range IDs
+
+  TournamentVaultV3 ETH prize and optional LRT bonus
+    √ escrows the exact ETH prize at creation and rejects mismatch
+    √ splits ETH prize and optional LRT bonus by the same ranking shares
+    √ allows zero LRT bonus and still pays the ETH prize
+    √ returns the escrowed ETH and any funded LRT bonus after cancellation
+    √ returns the ETH prize even when cancellation happens before the LRT bonus is funded
+    √ recovers expired drafts and open events and refunds registered players after a dispute timeout
+    √ restores credits on rejected ETH delivery and blocks prize-withdrawal reentry
+    √ rejects organizer cancellation after entry and non-referee result submission
+    √ enforces registration deadline boundary and blocks repeat prize withdrawal
+    √ rejects invalid roles and exact fee mismatches
+    √ buys redeems and withdraws exchange credit once
+
+
+  51 passing (1s)
+

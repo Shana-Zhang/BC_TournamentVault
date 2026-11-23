@@ -1,0 +1,3 @@
+# Acknowledgements
+
+AI assistance (OpenAI ChatGPT/Codex) was used for design discussion, code and test editing, deployment and wallet interaction assistance, troubleshooting, and report drafting. OpenZeppelin implements the reused ERC20, SafeERC20, ReentrancyGuard and Math components. The project-specific tournament state machine, prize/fee accounting and interface integrate these components. The student remains responsible for checking the submission and explaining its code, decisions and limitations. Wallet transaction confirmations were performed by the student.

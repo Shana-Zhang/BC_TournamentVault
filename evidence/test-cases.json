@@ -1,0 +1,525 @@
+{
+  "environment": "Hardhat local EVM 31337",
+  "stats": {
+    "suites": 2,
+    "tests": 51,
+    "passes": 51,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-11-23T11:57:12.705Z",
+    "end": "2026-11-23T11:57:14.162Z",
+    "duration": 1457
+  },
+  "cases": [
+    {
+      "id": "V3-01",
+      "purpose": "creation rejects zero ETH prize",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "creation rejects zero ETH prize",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-02",
+      "purpose": "creation rejects capacity below ranks",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "creation rejects capacity below ranks",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-03",
+      "purpose": "creation rejects capacity above maximum",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "creation rejects capacity above maximum",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-04",
+      "purpose": "creation rejects past registration deadline",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "creation rejects past registration deadline",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-05",
+      "purpose": "creation rejects result before registration",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "creation rejects result before registration",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-06",
+      "purpose": "creation rejects short dispute window",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "creation rejects short dispute window",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-07",
+      "purpose": "creation rejects long resolution window",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "creation rejects long resolution window",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-08",
+      "purpose": "creation rejects zero share",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "creation rejects zero share",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-09",
+      "purpose": "creation rejects incorrect total",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "creation rejects incorrect total",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-10",
+      "purpose": "creation rejects no ranks",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "creation rejects no ranks",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-11",
+      "purpose": "rejects zero and duplicate role addresses",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "rejects zero and duplicate role addresses",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-12",
+      "purpose": "requires bonus approval and preserves draft on failed funding",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "requires bonus approval and preserves draft on failed funding",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-13",
+      "purpose": "only organizer can open and cancel a draft",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "only organizer can open and cancel a draft",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-14",
+      "purpose": "cannot open registration twice",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "cannot open registration twice",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-15",
+      "purpose": "o assigned role cannot register",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "o assigned role cannot register",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-16",
+      "purpose": "r assigned role cannot register",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "r assigned role cannot register",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-17",
+      "purpose": "s assigned role cannot register",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "s assigned role cannot register",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-18",
+      "purpose": "duplicate registration leaves fees unchanged",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "duplicate registration leaves fees unchanged",
+      "expected": "Scenario succeeds with the asserted exact balances, credits, state and events",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-19",
+      "purpose": "full roster rejects an extra player",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "full roster rejects an extra player",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-20",
+      "purpose": "cannot lock early; insufficient roster cancels at deadline",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "cannot lock early; insufficient roster cancels at deadline",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-21",
+      "purpose": "referee result rejects duplicate winners",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "referee result rejects duplicate winners",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-22",
+      "purpose": "referee result rejects outsider winner",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "referee result rejects outsider winner",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-23",
+      "purpose": "referee result rejects wrong rank count",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "referee result rejects wrong rank count",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-24",
+      "purpose": "referee result rejects empty evidence and exact result deadline",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "referee result rejects empty evidence and exact result deadline",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-25",
+      "purpose": "outsider and empty objections are rejected",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "outsider and empty objections are rejected",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-26",
+      "purpose": "objection closes at exact boundary and ordinary finalization opens",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "objection closes at exact boundary and ordinary finalization opens",
+      "expected": "Scenario succeeds with the asserted exact balances, credits, state and events",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-27",
+      "purpose": "dispute prevents ordinary finalization and second objection",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "dispute prevents ordinary finalization and second objection",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-28",
+      "purpose": "only resolver can replace ranking and settle once",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "only resolver can replace ranking and settle once",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-29",
+      "purpose": "resolution rejects exact expiry and timeout cancellation succeeds",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "resolution rejects exact expiry and timeout cancellation succeeds",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-30",
+      "purpose": "cancelled populated event credits each fee only once",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "cancelled populated event credits each fee only once",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-31",
+      "purpose": "organizer refund requires cancellation and cannot repeat",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "organizer refund requires cancellation and cannot repeat",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-32",
+      "purpose": "finalized state rejects cancellation and repeated settlement",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "finalized state rejects cancellation and repeated settlement",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-33",
+      "purpose": "zero recipient and outsider cannot take winner credit",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "zero recipient and outsider cannot take winner credit",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-34",
+      "purpose": "fee withdrawals enforce ownership zero recipient and one payment",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "fee withdrawals enforce ownership zero recipient and one payment",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-35",
+      "purpose": "all winner payments conserve prize assets and clear liabilities",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "all winner payments conserve prize assets and clear liabilities",
+      "expected": "Scenario succeeds with the asserted exact balances, credits, state and events",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-36",
+      "purpose": "exchange rejects unsupported redemption precision 0",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "exchange rejects unsupported redemption precision 0",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-37",
+      "purpose": "exchange rejects unsupported redemption precision 1",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "exchange rejects unsupported redemption precision 1",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-38",
+      "purpose": "exchange rejects insufficient reserve without taking tokens",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "exchange rejects insufficient reserve without taking tokens",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-39",
+      "purpose": "exchange requires inventory and nonzero purchase payment",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "exchange requires inventory and nonzero purchase payment",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-40",
+      "purpose": "unknown tournament lookup rejects zero and out-of-range IDs",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-controls.test.js",
+      "input": "unknown tournament lookup rejects zero and out-of-range IDs",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-controls.test.js"
+    },
+    {
+      "id": "V3-41",
+      "purpose": "escrows the exact ETH prize at creation and rejects mismatch",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-prize.test.js",
+      "input": "escrows the exact ETH prize at creation and rejects mismatch",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-prize.test.js"
+    },
+    {
+      "id": "V3-42",
+      "purpose": "splits ETH prize and optional LRT bonus by the same ranking shares",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-prize.test.js",
+      "input": "splits ETH prize and optional LRT bonus by the same ranking shares",
+      "expected": "Scenario succeeds with the asserted exact balances, credits, state and events",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-prize.test.js"
+    },
+    {
+      "id": "V3-43",
+      "purpose": "allows zero LRT bonus and still pays the ETH prize",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-prize.test.js",
+      "input": "allows zero LRT bonus and still pays the ETH prize",
+      "expected": "Scenario succeeds with the asserted exact balances, credits, state and events",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-prize.test.js"
+    },
+    {
+      "id": "V3-44",
+      "purpose": "returns the escrowed ETH and any funded LRT bonus after cancellation",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-prize.test.js",
+      "input": "returns the escrowed ETH and any funded LRT bonus after cancellation",
+      "expected": "Scenario succeeds with the asserted exact balances, credits, state and events",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-prize.test.js"
+    },
+    {
+      "id": "V3-45",
+      "purpose": "returns the ETH prize even when cancellation happens before the LRT bonus is funded",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-prize.test.js",
+      "input": "returns the ETH prize even when cancellation happens before the LRT bonus is funded",
+      "expected": "Scenario succeeds with the asserted exact balances, credits, state and events",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-prize.test.js"
+    },
+    {
+      "id": "V3-46",
+      "purpose": "recovers expired drafts and open events and refunds registered players after a dispute timeout",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-prize.test.js",
+      "input": "recovers expired drafts and open events and refunds registered players after a dispute timeout",
+      "expected": "Scenario succeeds with the asserted exact balances, credits, state and events",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-prize.test.js"
+    },
+    {
+      "id": "V3-47",
+      "purpose": "restores credits on rejected ETH delivery and blocks prize-withdrawal reentry",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-prize.test.js",
+      "input": "restores credits on rejected ETH delivery and blocks prize-withdrawal reentry",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-prize.test.js"
+    },
+    {
+      "id": "V3-48",
+      "purpose": "rejects organizer cancellation after entry and non-referee result submission",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-prize.test.js",
+      "input": "rejects organizer cancellation after entry and non-referee result submission",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-prize.test.js"
+    },
+    {
+      "id": "V3-49",
+      "purpose": "enforces registration deadline boundary and blocks repeat prize withdrawal",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-prize.test.js",
+      "input": "enforces registration deadline boundary and blocks repeat prize withdrawal",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-prize.test.js"
+    },
+    {
+      "id": "V3-50",
+      "purpose": "rejects invalid roles and exact fee mismatches",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-prize.test.js",
+      "input": "rejects invalid roles and exact fee mismatches",
+      "expected": "Invalid call reverts as asserted; authorized continuation and unchanged protected state satisfy assertions",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-prize.test.js"
+    },
+    {
+      "id": "V3-51",
+      "purpose": "buys redeems and withdraws exchange credit once",
+      "preconditions": "Isolated funded/role/state fixture in test/v3-prize.test.js",
+      "input": "buys redeems and withdraws exchange credit once",
+      "expected": "Scenario succeeds with the asserted exact balances, credits, state and events",
+      "actual": "All assertions passed on local chain 31337",
+      "status": "Pass",
+      "source": "test/v3-prize.test.js"
+    }
+  ]
+}

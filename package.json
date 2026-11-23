@@ -1,0 +1,32 @@
+{
+  "name": "tournament-vault",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ETH prize escrow with optional LRT bonuses for esports tournaments",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "coverage": "hardhat coverage",
+    "deploy:local:v3": "hardhat run scripts/deploy-local-v3.js --network localhost",
+    "verify:sepolia:v3": "hardhat run scripts/verify-v3.js --network sepolia",
+    "check:sepolia:v3": "node scripts/read-only-check.js sepolia-v3",
+    "config:check": "node scripts/check-ui-config.js",
+    "node": "hardhat node",
+    "serve": "node scripts/serve.js",
+    "analyze": "node scripts/analyze.js",
+    "preflight": "node scripts/preflight.js"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "2.1.2",
+    "@nomicfoundation/hardhat-ethers": "3.1.3",
+    "@nomicfoundation/hardhat-network-helpers": "1.1.2",
+    "@nomicfoundation/hardhat-verify": "2.1.4",
+    "@openzeppelin/contracts": "5.6.1",
+    "chai": "4.5.0",
+    "dotenv": "16.6.1",
+    "ethers": "6.17.0",
+    "hardhat": "2.29.2",
+    "solc": "0.8.26",
+    "solidity-coverage": "0.8.17"
+  }
+}
