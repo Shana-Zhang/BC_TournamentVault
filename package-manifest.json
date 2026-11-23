@@ -68,8 +68,8 @@
     },
     {
       "path": "docs/acknowledgements.md",
-      "sha256": "968ed788eb8ae971f92473013dd41c335c21997d698e93e81389a89ccbde92c8",
-      "bytes": 573
+      "sha256": "617a4f942e48a6daaf1c3dc4107b76343d6df81f5d0416ceab101630ab0b7e0a",
+      "bytes": 207
     },
     {
       "path": "docs/deployment-information.md",
@@ -83,13 +83,13 @@
     },
     {
       "path": "docs/TournamentVault_V3_Final_Report.docx",
-      "sha256": "fdced30a4242d680416cc5886cee18e13f1914aae3e2350e46b04e55d8f3c30c",
-      "bytes": 439192
+      "sha256": "d00e84161abb53f5146030b6f9bfd2090a4ba29dd6c020ec3084f96c1526a610",
+      "bytes": 438145
     },
     {
       "path": "docs/TournamentVault_V3_Final_Report.pdf",
-      "sha256": "90755990a41f88090bad72cd43972f630fcba991e0414fcf17c4087b34822dca",
-      "bytes": 853611
+      "sha256": "35acd687d1617f369571b0e2e163ccd270586acb7824cd262de634c6de75a7cf",
+      "bytes": 852757
     },
     {
       "path": "evidence/sepolia-v3-final-snapshot.json",
@@ -148,8 +148,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "45b6767da5506d371311bb9994324a6ac6136753db8bc7e4c213afcd891aab52",
-      "bytes": 6138
+      "sha256": "ffce69a355c64db718af3471d2b0a17c7fb1ec32e55f4c5f4249bc36c3b200fc",
+      "bytes": 5772
     },
     {
       "path": "reference/CSIT5760_Final_Project_Report_Template.docx",
