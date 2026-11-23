@@ -83,13 +83,13 @@
     },
     {
       "path": "docs/TournamentVault_V3_Final_Report.docx",
-      "sha256": "d00e84161abb53f5146030b6f9bfd2090a4ba29dd6c020ec3084f96c1526a610",
-      "bytes": 438145
+      "sha256": "3e6fb9d8d5610710245f8685bc304023b01159da4f82d4f11c04f97f8c6d2f8a",
+      "bytes": 438174
     },
     {
       "path": "docs/TournamentVault_V3_Final_Report.pdf",
-      "sha256": "35acd687d1617f369571b0e2e163ccd270586acb7824cd262de634c6de75a7cf",
-      "bytes": 852757
+      "sha256": "3fc40291f5756013942476082330e2d4ba7deeb77f4448937234c6f4a0c9d818",
+      "bytes": 852867
     },
     {
       "path": "evidence/sepolia-v3-final-snapshot.json",
@@ -148,8 +148,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "ffce69a355c64db718af3471d2b0a17c7fb1ec32e55f4c5f4249bc36c3b200fc",
-      "bytes": 5772
+      "sha256": "487832c98c2baef9917e15b57f28102c2fb0d5f6a16d408db2962b87a389e76f",
+      "bytes": 5872
     },
     {
       "path": "reference/CSIT5760_Final_Project_Report_Template.docx",
@@ -168,8 +168,8 @@
     },
     {
       "path": "scripts/build-report.py",
-      "sha256": "d001dc0ef444362e8ad34fec860f516cb4b4cbadd529e695a90fb7415cffdf35",
-      "bytes": 21747
+      "sha256": "2ed60ce90861c268975d007f0a979016af9fd82d8e19e299952c11262e44c4c1",
+      "bytes": 21945
     },
     {
       "path": "scripts/check-ui-config.js",

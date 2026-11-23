@@ -1,5 +1,7 @@
 # TournamentVault V3
 
+V3 denotes the third version of the project, developed through two preceding rounds of revision.
+
 Zhang Shihan · 21317896 · CSIT5760
 
 ETH prize escrow at creation, optional LRT bonus funded before entry, ranked results, participant objections, independent resolver permissions and individual payouts. Three production contracts: LearningRewardToken, TournamentVaultV3 and LRTExchange.
