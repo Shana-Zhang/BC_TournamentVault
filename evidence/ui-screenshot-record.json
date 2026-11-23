@@ -17,6 +17,12 @@
       "path": "evidence/ui-participant-transaction-history.png",
       "caption": "Figure 3 Connected participant history: confirmed registration and prize-withdrawal transaction links.",
       "sha256": "927a97b3e23964bb32a0285f6272d3be52c46b8cd5751efaf21c0c3707e5d142"
+    },
+    {
+      "path": "evidence/ui-results-review-example.png",
+      "caption": "Figure 4 Results and review interface: ranked addresses, evidence, referee submission, dispute resolution and objection controls. Filled only for illustration; not submitted.",
+      "sha256": "34771b68c84d918c1907c3e33cfc704d1f9e351b48823ef97f16517bb7b8629d",
+      "capturedAt": "2026-11-23T13:57:24.928154+00:00"
     }
   ]
 }

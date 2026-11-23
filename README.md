@@ -63,3 +63,10 @@ The 0.001 ETH and 1 LRT public demonstration uses 50/30/20 shares; entry fee is 
 Repository: https://github.com/Shana-Zhang/BC_TournamentVault
 
 Final report: docs/TournamentVault_V3_Final_Report.pdf and matching .docx. Report source: scripts/build-report.py, requiring Python with python-docx. Use the retained course template in reference/. Build with python scripts/build-report.py; export the result with Word and refresh the table of contents. The report is supplied as a final artifact, so Python is not needed to compile/test the contracts.
+
+
+## Visible action controls
+
+The interface keeps tournament, referee, resolver and objection controls visible. Before any wallet transaction or token approval, a click refreshes the selected event and checks the current account, state, deadlines and credits. An ineligible click shows a message and requests no transaction. Contract authorization remains the final enforcement layer.
+
+Run `node scripts/check-ui-action-guards.cjs` for isolated browser-handler guard checks. The filled results/review screenshot is an unsubmitted interface example; public result, objection and arbitration receipts remain the historical integration evidence.

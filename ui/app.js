@@ -118,14 +118,22 @@ function updateRoleInterface(t, isRegistered, prizeCredit, ethCredit, refundClai
               : role === 'any' && ((element.dataset.action === 'lock' && canLock)
                 || (element.dataset.action === 'finalize' && canFinalize)
                 || (element.dataset.action === 'timeout' && canTimeout));
-    element.hidden = !allowed;
+    element.hidden = false;
+    element.dataset.allowed = String(Boolean(allowed));
+    element.title = allowed ? 'Available for this account and tournament state.' : 'Current account or tournament state does not allow this action.';
   });
   const resultForm = $('results');
-  resultForm.hidden = !canSubmit && !canResolve;
-  resultForm.querySelector('[name="mode"][value="submit"]').hidden = !canSubmit;
-  resultForm.querySelector('[name="mode"][value="resolve"]').hidden = !canResolve;
-  $('dispute').hidden = !canDispute;
-  $('results-card').hidden = resultForm.hidden && $('dispute').hidden;
+  resultForm.hidden = false;
+  resultForm.noValidate = true;
+  for (const [mode, allowed] of [['submit', canSubmit], ['resolve', canResolve]]) {
+    const button = resultForm.querySelector(`[name="mode"][value="${mode}"]`);
+    button.hidden = false;
+    button.dataset.allowed = String(Boolean(allowed));
+  }
+  $('dispute').hidden = false;
+  $('dispute').noValidate = true;
+  $('dispute').querySelector('button').dataset.allowed = String(Boolean(canDispute));
+  $('results-card').hidden = false;
   $('role-summary').textContent = [
     organizer && 'Organizer', referee && 'Referee', resolver && 'Resolver',
     isRegistered && 'Registered player', !assigned && !isRegistered && 'Not assigned to this tournament'
@@ -394,7 +402,8 @@ $('tournament-list').onclick = event => {
 };
 $('tournament-id').oninput = () => {
   tournament = null; loadedTournamentId = null;
-  $('actions').hidden = true; $('results-card').hidden = true;
+  $('actions').hidden = false; $('results-card').hidden = false;
+  document.querySelectorAll('#actions button, #results button, #dispute button').forEach(button => { button.dataset.allowed = 'false'; });
   $('role-summary').textContent = 'Load a tournament to see actions for your role.';
   $('tournament').textContent = 'Tournament selection changed. Click Load tournament before using tournament actions.';
 };
@@ -402,10 +411,20 @@ function requireTournament() {
   if (!tournament || loadedTournamentId !== id()) throw new Error('Load the selected tournament first.');
   return loadedTournamentId;
 }
+async function requireAllowedTournamentAction(button) {
+  requireTournament();
+  // Re-read state and credits before any approval or wallet transaction request.
+  await refresh();
+  const n = requireTournament();
+  if (button?.dataset.allowed !== 'true')
+    throw new Error('Current account or tournament state does not allow this action. No transaction requested.');
+  return n;
+}
 $('actions').onclick = event => {
-  const method = event.target.dataset.action; if (!method) return;
+  const button = event.target.closest('[data-action]');
+  const method = button?.dataset.action; if (!method) return;
   action(async () => {
-    const n = requireTournament();
+    const n = await requireAllowedTournamentAction(button);
     const methods = {
       open: async () => {
         const bonus = tournament.rules.lrtBonus ?? 0n;
@@ -450,13 +469,18 @@ $('create').onsubmit = event => {
 $('results').onsubmit = event => {
   event.preventDefault(); const mode = event.submitter.value;
   action(async () => {
-    const n = requireTournament();
+    const n = await requireAllowedTournamentAction(event.submitter);
+    if (!event.target.reportValidity()) return;
     const winners = $('winners').value.split(/[\s,]+/).filter(Boolean).map(ethers.getAddress);
     const hash = ethers.id($('evidence').value);
     await transact(mode === 'resolve' ? 'Resolve dispute' : 'Submit result', mode === 'resolve' ? vault.resolveDispute(n, winners, hash) : vault.submitResult(n, winners, hash));
   });
 };
-$('dispute').onsubmit = event => { event.preventDefault(); action(() => transact('Raise objection', vault.raiseDispute(requireTournament(), ethers.id($('reason').value)))); };
+$('dispute').onsubmit = event => { event.preventDefault(); action(async () => {
+  const n = await requireAllowedTournamentAction(event.submitter);
+  if (!event.target.reportValidity()) return;
+  await transact('Raise objection', vault.raiseDispute(n, ethers.id($('reason').value)));
+}); };
 $('redeem').onsubmit = event => { event.preventDefault(); action(async () => {
   const amount = ethers.parseEther($('redeem-amount').value); await exchange.quote(amount);
   await transact('Approve LRT redemption', token.approve(exchange.target, amount)); await transact('Redeem LRT', exchange.redeem(amount));

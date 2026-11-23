@@ -83,13 +83,13 @@
     },
     {
       "path": "docs/TournamentVault_V3_Final_Report.docx",
-      "sha256": "ac1b64b35726c2f6f841c250178a4ab31de01829f09d96b9000230441b0c3d67",
-      "bytes": 503314
+      "sha256": "104b82bdddfd583454d14ac0cbd9aa6b53cdae60de241288b818e63e100b2fc1",
+      "bytes": 665637
     },
     {
       "path": "docs/TournamentVault_V3_Final_Report.pdf",
-      "sha256": "7cb7d93ec55115dcd649874b54b1502e7d917f19990412525a965bbce9ddc00a",
-      "bytes": 566094
+      "sha256": "14b7b712145ba78918a529851ecfe2b57812353a7b0ef57f653694201f4b57bb",
+      "bytes": 609430
     },
     {
       "path": "evidence/sepolia-v3-final-snapshot.json",
@@ -117,6 +117,11 @@
       "bytes": 3286
     },
     {
+      "path": "evidence/ui-action-guards.txt",
+      "sha256": "3a02aabaa8048bbfd6ac4fbf2299bd004d3fc94bb0d9a7bc5b671c608e2a4714",
+      "bytes": 136
+    },
+    {
       "path": "evidence/ui-create-form-example.png",
       "sha256": "bfaa14cc1a509f0f46ce264faf1790faecd44ce4a5a93b603d4d14785fbc65c4",
       "bytes": 177385
@@ -132,9 +137,14 @@
       "bytes": 102229
     },
     {
+      "path": "evidence/ui-results-review-example.png",
+      "sha256": "34771b68c84d918c1907c3e33cfc704d1f9e351b48823ef97f16517bb7b8629d",
+      "bytes": 162151
+    },
+    {
       "path": "evidence/ui-screenshot-record.json",
-      "sha256": "af2769d37ca6b8c178274a81900f987c8dd7d951d743c8b6b181d40f5c6ae821",
-      "bytes": 1006
+      "sha256": "016719ad866e2a81bff598517914a4f9fc3fc4dfade303785277970b243cbaea",
+      "bytes": 1415
     },
     {
       "path": "hardhat.config.js",
@@ -153,8 +163,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "487832c98c2baef9917e15b57f28102c2fb0d5f6a16d408db2962b87a389e76f",
-      "bytes": 5872
+      "sha256": "5aca3fd508f705fb58b396c77157a02963ecc4330b445f7c9c8fc09c4f4e1ea7",
+      "bytes": 6522
     },
     {
       "path": "reference/CSIT5760_Final_Project_Report_Template.docx",
@@ -173,8 +183,13 @@
     },
     {
       "path": "scripts/build-report.py",
-      "sha256": "25c649c4b5c706e482bcb63be551a52aba10bac675862b8cd12b3a7964c736f2",
-      "bytes": 22174
+      "sha256": "ea32fa7cfe3ff8979cf30bd04290c3ad8c4b33e882579abcbd4a1389a297b8d1",
+      "bytes": 22798
+    },
+    {
+      "path": "scripts/check-ui-action-guards.cjs",
+      "sha256": "1075f4a1260831969c7f9c6f5ac9a4046d9867a9c759460f96ff995141118cda",
+      "bytes": 3738
     },
     {
       "path": "scripts/check-ui-config.js",
@@ -228,8 +243,8 @@
     },
     {
       "path": "ui/app.js",
-      "sha256": "3282d7d50c343568e595a199394380c77b460f115940ca6c8542cc25162c646a",
-      "bytes": 28881
+      "sha256": "340999d194527d43057e6fb6c732087f6016be973b8f58ba3c2bfe073d213506",
+      "bytes": 30056
     },
     {
       "path": "ui/config.json",

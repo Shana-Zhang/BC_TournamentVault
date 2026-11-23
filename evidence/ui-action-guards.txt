@@ -1,0 +1,1 @@
+UI guard checks passed: visible controls; stale/unauthorized clicks request no wallet transaction; eligible actions remain functional.
