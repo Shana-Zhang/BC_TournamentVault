@@ -83,13 +83,13 @@
     },
     {
       "path": "docs/TournamentVault_V3_Final_Report.docx",
-      "sha256": "104b82bdddfd583454d14ac0cbd9aa6b53cdae60de241288b818e63e100b2fc1",
-      "bytes": 665637
+      "sha256": "40caa8aaa640a74cdf234ed7d79610741f8eb2b8c7273ccec75b4fed7109975e",
+      "bytes": 843845
     },
     {
       "path": "docs/TournamentVault_V3_Final_Report.pdf",
-      "sha256": "14b7b712145ba78918a529851ecfe2b57812353a7b0ef57f653694201f4b57bb",
-      "bytes": 609430
+      "sha256": "c12c0dc173808376bf5acefd8866aef64627b1237ab5b4e9f84bf2850f6c8e50",
+      "bytes": 692911
     },
     {
       "path": "evidence/sepolia-v3-final-snapshot.json",
@@ -143,8 +143,13 @@
     },
     {
       "path": "evidence/ui-screenshot-record.json",
-      "sha256": "016719ad866e2a81bff598517914a4f9fc3fc4dfade303785277970b243cbaea",
-      "bytes": 1415
+      "sha256": "7de9eeacabf2802778e5330481dbf0b0cb356dcd0bd07c22af789a43d9746454",
+      "bytes": 1846
+    },
+    {
+      "path": "evidence/ui-wallet-connection.png",
+      "sha256": "2d044ce262fe86d34d50c931dd33f32a9e8b6018701b3628e57187ee8b2f48ea",
+      "bytes": 177374
     },
     {
       "path": "hardhat.config.js",
@@ -183,8 +188,8 @@
     },
     {
       "path": "scripts/build-report.py",
-      "sha256": "ea32fa7cfe3ff8979cf30bd04290c3ad8c4b33e882579abcbd4a1389a297b8d1",
-      "bytes": 22798
+      "sha256": "8c11ca0fe60548a3bf95b7d1fc59bdf91188f3ef4b7858a4fb9392c036b242b5",
+      "bytes": 23155
     },
     {
       "path": "scripts/check-ui-action-guards.cjs",

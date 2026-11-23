@@ -23,6 +23,12 @@
       "caption": "Figure 4 Results and review interface: ranked addresses, evidence, referee submission, dispute resolution and objection controls. Filled only for illustration; not submitted.",
       "sha256": "34771b68c84d918c1907c3e33cfc704d1f9e351b48823ef97f16517bb7b8629d",
       "capturedAt": "2026-11-23T13:57:24.928154+00:00"
+    },
+    {
+      "path": "evidence/ui-wallet-connection.png",
+      "caption": "Figure 5 MetaMask connection request for six demonstration accounts. This grants website connection permissions; it is not a transfer or an arbitration transaction. Moving funds still requires wallet confirmation.",
+      "source": "User-provided screenshot",
+      "sha256": "2d044ce262fe86d34d50c931dd33f32a9e8b6018701b3628e57187ee8b2f48ea"
     }
   ]
 }
